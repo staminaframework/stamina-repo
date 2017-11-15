@@ -83,8 +83,6 @@ public class RepositoryManager {
     private String repositoryId;
     private Thread repositoryWatcher;
 
-    private
-
     @Activate
     void activate(BundleContext bundleContext, Config config) throws IOException, InvalidSyntaxException {
         if (config.id() == null || config.id().length() == 0) {

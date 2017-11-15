@@ -42,6 +42,7 @@
             <artifactId>stamina-http</artifactId>
             <version>0.1.0-SNAPSHOT</version>
             <type>esa</type>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>io.staminaframework.repo</groupId>
