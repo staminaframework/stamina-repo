@@ -1,0 +1,3 @@
+Require-Capability: osgi.contract;filter:="(&(osgi.contract=JavaServlet)(version=3.1))"
+Private-Package: org.apache.felix.utils.manifest
+-include: ${project.basedir}/../bnd.bnd

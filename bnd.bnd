@@ -1,0 +1,7 @@
+Git-Id: ${stamina.build}
+Bundle-Copyright: Copyright (c) 2017 Stamina Framework developers
+Bundle-License: https://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-Vendor: ${project.organization.name}
+Bundle-DocURL: ${project.url}
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+-dsannotations-options: norequirements
