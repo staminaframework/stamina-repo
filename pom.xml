@@ -23,7 +23,7 @@
     <parent>
         <groupId>io.staminaframework</groupId>
         <artifactId>parent</artifactId>
-        <version>1-SNAPSHOT</version>
+        <version>2</version>
     </parent>
 
     <groupId>io.staminaframework.repo</groupId>
@@ -45,18 +45,15 @@
     <scm>
         <url>http://github.com/staminaframework/stamina-repo</url>
         <connection>scm:git:https://github.com/staminaframework/stamina-repo.git</connection>
+        <tag>HEAD</tag>
     </scm>
-
-    <properties>
-        <stamina.build>${git.commit.id.describe-short}</stamina.build>
-    </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>io.staminaframework.runtime</groupId>
                 <artifactId>io.staminaframework.runtime.starter</artifactId>
-                <version>0.1.0-SNAPSHOT</version>
+                <version>0.1.0</version>
                 <type>pom</type>
             </dependency>
         </dependencies>
@@ -65,17 +62,28 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>pl.project13.maven</groupId>
-                <artifactId>git-commit-id-plugin</artifactId>
-                <version>2.2.3</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <tagNameFormat>stamina-repo-@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
                 <executions>
                     <execution>
-                        <id>get-the-git-infos</id>
+                        <phase>validate</phase>
                         <goals>
-                            <goal>revision</goal>
+                            <goal>create</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <buildNumberPropertyName>stamina.build</buildNumberPropertyName>
+                    <shortRevisionLength>7</shortRevisionLength>
+                </configuration>
             </plugin>
         </plugins>
         <pluginManagement>

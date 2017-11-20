@@ -40,7 +40,7 @@
         <dependency>
             <groupId>io.staminaframework.addons</groupId>
             <artifactId>stamina-http</artifactId>
-            <version>0.1.0-SNAPSHOT</version>
+            <version>0.1.0</version>
             <type>esa</type>
             <optional>true</optional>
         </dependency>
@@ -56,7 +56,7 @@
             <plugin>
                 <groupId>io.staminaframework</groupId>
                 <artifactId>stamina-maven-plugin</artifactId>
-                <version>0.1.0-SNAPSHOT</version>
+                <version>0.1.0</version>
                 <executions>
                     <execution>
                         <id>package-addon</id>
